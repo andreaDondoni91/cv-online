@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: theme("colors.paper");
+  color: theme("colors.ink");
+}
+
+@layer components {
+  /* Blueprint grid background used behind the hero */
+  .grid-bg {
+    background-image: linear-gradient(theme("colors.grid") 1px, transparent 1px),
+      linear-gradient(90deg, theme("colors.grid") 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 85%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 85%);
+  }
+
+  /* Changelog timeline connector dot */
+  .changelog-item {
+    position: relative;
+    border-left: 2px solid theme("colors.grid");
+    padding: 28px 0 28px 28px;
+  }
+  .changelog-item:last-child {
+    border-left: 2px solid transparent;
+  }
+  .changelog-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 34px;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: theme("colors.paper");
+    border: 2px solid theme("colors.teal");
+  }
+  .changelog-item.current::before {
+    background: theme("colors.teal");
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
