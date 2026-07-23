@@ -16,12 +16,21 @@ body {
 @layer components {
   /* Blueprint grid background used behind the hero */
   .grid-bg {
+    position: relative;
+  }
+  .grid-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     background-image: linear-gradient(theme("colors.grid") 1px, transparent 1px),
       linear-gradient(90deg, theme("colors.grid") 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: -1px -1px;
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 85%);
     mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 85%);
+  }
+  .grid-bg > * {
+    position: relative;
   }
 
   /* Changelog timeline connector dot */
