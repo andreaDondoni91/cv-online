@@ -10,8 +10,10 @@ const changelog = [
       { type: "Added", text: "workflow di sviluppo assistito da AI (GitHub Copilot, Claude) per velocizzare il ciclo di rilascio." },
       { type: "Changed", text: "aggiornamento continuo di librerie e framework del progetto." },
       { type: "Improved", text: "esperienza utente end-to-end, dal brief al deploy in produzione." },
+      { type: "Added", text: "Docker per l'ambiente di sviluppo locale." },
+      { type: "Added", text: "servizi cloud AWS e Heroku per il deploy." },
     ],
-    stack: "javascript · react · gatsby · tailwind · css · html5 · php · git",
+    stack: "javascript · react · gatsby · tailwind · css · html5 · php · git · docker · aws · heroku",
   },
   {
     version: "v5.0.0",
