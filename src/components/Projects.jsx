@@ -1,40 +1,48 @@
 import React from "react";
 import projects from "../data/projects";
 import Section from "./Section";
+import Terminal from "./Terminal";
 
 export default function Projects() {
+  const [project] = projects;
+
   return (
     <Section id="projects" eyebrow="# projects/" title="Progetti" titleClassName="mb-2" altBg>
       <p className="text-muted text-[15px] mb-7">
-        Work in progress — questa sezione cresce insieme al repo. Sostituisci
-        i placeholder con progetti reali, demo live e screenshot.
+        Questa sezione cresce insieme al repo — aggiungerò altri progetti reali
+        man mano che li pubblico.
       </p>
 
-      <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
-        {projects.map((p) => (
-          <div
-            key={p.title}
-            className="bg-paperwhite border border-paper2 rounded-[10px] p-6 transition hover:-translate-y-1 hover:shadow-[0_20px_40px_-24px_rgba(18,33,58,0.35)]"
+      <div className="border border-paper2 rounded-[10px] bg-paperwhite overflow-hidden md:grid md:grid-cols-[1.2fr_1fr]">
+        <div className="p-7 md:p-8">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="inline-block font-mono text-[11px] px-2 py-0.5 rounded-full bg-tealdim text-teal mr-1.5 mb-1.5"
+            >
+              {tag}
+            </span>
+          ))}
+          <h3 className="font-display text-xl md:text-[26px] mt-3 mb-2.5">{project.title}</h3>
+          <p className="text-inksoft text-[15px] mb-6 max-w-[420px]">{project.description}</p>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium bg-ink text-paperwhite hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_#12213A] transition"
           >
-            {p.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-block font-mono text-[11px] px-2 py-0.5 rounded-full bg-tealdim text-teal mr-1.5 mb-1.5"
-              >
-                {tag}
-              </span>
-            ))}
-            <h3 className="font-display text-[17px] mt-3 mb-1.5">{p.title}</h3>
-            <p className="text-sm text-muted mb-3.5">{p.description}</p>
-            {p.link ? (
-              <a href={p.link} className="font-mono text-[13px] text-teal border-b border-tealdim hover:border-teal">
-                {p.linkLabel}
-              </a>
-            ) : (
-              <span className="font-mono text-[13px] text-muted">{p.linkLabel}</span>
-            )}
-          </div>
-        ))}
+            {project.linkLabel}
+          </a>
+        </div>
+
+        <div className="bg-paper2 p-7 md:p-8 flex items-center">
+          <Terminal
+            className="w-full"
+            lines={[
+              { prompt: "git remote -v", output: "origin  github.com/andreaDondoni91/cv-online" },
+            ]}
+          />
+        </div>
       </div>
     </Section>
   );
