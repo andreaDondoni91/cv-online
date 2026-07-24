@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Frontend developer con oltre 10 anni di esperienza. Costruisco interfacce che restano in produzione ben oltre il framework con cui sono nate.",
     author: "Andrea Dondoni",
-    siteUrl: "https://andreadondoni.dev",
+    siteUrl: "https://andrea-dondoni.netlify.app",
   },
-  plugins: ["gatsby-plugin-postcss"],
+  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-sitemap"],
 };
