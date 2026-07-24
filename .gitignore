@@ -4,8 +4,5 @@ public
 .env
 .DS_Store
 npm-debug.log*
-.claude/settings.local.json
+.claude
 coverage
-playwright-report
-test-results
-blob-report

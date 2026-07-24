@@ -19,7 +19,6 @@ const devDependencies = [
 function Row({ k, v, comma }) {
   return (
     <div>
-      {"    "}
       <span className="text-codeKey">"{k}"</span>
       <span className="text-codePunct">: </span>
       <span className="text-codeValue">"{v}"</span>
