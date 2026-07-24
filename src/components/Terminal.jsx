@@ -9,6 +9,10 @@ export default function Terminal({ typedLine, lines = [], className = "" }) {
 
   useEffect(() => {
     if (!typedLine) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTyped(typedLine);
+      return undefined;
+    }
     let i = 0;
     const id = setInterval(() => {
       i++;
@@ -20,9 +24,9 @@ export default function Terminal({ typedLine, lines = [], className = "" }) {
 
   return (
     <div
-      className={`bg-ink text-[#CFE8E6] rounded-[10px] px-6 py-5 font-mono text-sm shadow-[0_30px_60px_-30px_rgba(18,33,58,0.45)] ${className}`}
+      className={`bg-ink text-terminalText rounded-[10px] px-6 py-5 font-mono text-sm shadow-[0_30px_60px_-30px_rgba(18,33,58,0.45)] ${className}`}
     >
-      <div className="mb-3.5 flex gap-1.5">
+      <div className="mb-3.5 flex gap-1.5" aria-hidden="true">
         <span className="w-2.5 h-2.5 rounded-full bg-amber inline-block" />
         <span className="w-2.5 h-2.5 rounded-full bg-teal inline-block" />
         <span className="w-2.5 h-2.5 rounded-full bg-muted inline-block" />
@@ -33,7 +37,7 @@ export default function Terminal({ typedLine, lines = [], className = "" }) {
           <div>
             <span className="text-amber">$</span> whoami
           </div>
-          <div className="text-[#9FB4C7]">{typed}</div>
+          <div className="text-terminalOutput">{typed}</div>
         </>
       )}
 
@@ -44,7 +48,17 @@ export default function Terminal({ typedLine, lines = [], className = "" }) {
               <span className="text-amber">$</span> {line.prompt}
             </div>
           )}
-          {line.output && <div className="text-[#9FB4C7]">{line.output}</div>}
+          {line.output && (
+            <div className="text-terminalOutput">
+              {line.href ? (
+                <a href={line.href} className="underline hover:text-terminalText">
+                  {line.output}
+                </a>
+              ) : (
+                line.output
+              )}
+            </div>
+          )}
         </div>
       ))}
     </div>
