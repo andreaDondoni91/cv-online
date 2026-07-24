@@ -37,6 +37,13 @@ export default function Hero() {
           >
             Contattami
           </a>
+          <a
+            href="/CV-Andrea-Dondoni.pdf"
+            download="CV-Andrea-Dondoni.pdf"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium border border-ink text-ink hover:bg-ink hover:text-paperwhite hover:-translate-y-0.5 transition"
+          >
+            Scarica CV ↓
+          </a>
         </div>
       </div>
     </header>
