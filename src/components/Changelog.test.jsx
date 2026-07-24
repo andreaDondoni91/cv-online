@@ -1,12 +1,14 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Changelog from "./Changelog";
-import changelog from "../data/changelog";
+import itTranslation from "../../locales/it/translation.json";
+
+const { releases } = itTranslation.changelog;
 
 describe("Changelog", () => {
   it("renders one entry per release", () => {
     render(<Changelog />);
-    changelog.forEach((release) => {
+    releases.forEach((release) => {
       expect(screen.getByText(release.role)).toBeInTheDocument();
     });
   });

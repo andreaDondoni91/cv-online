@@ -1,11 +1,20 @@
 import React from "react";
-import changelog from "../data/changelog";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import Section from "./Section";
 
 export default function Changelog() {
+  const { t } = useTranslation();
+  const releases = t("changelog.releases", { returnObjects: true });
+
   return (
-    <Section id="changelog" eyebrow="# CHANGELOG.md" title="Cronologia release" titleClassName="mb-10" altBg>
-      {changelog.map((release) => (
+    <Section
+      id="changelog"
+      eyebrow={t("changelog.eyebrow")}
+      title={t("changelog.title")}
+      titleClassName="mb-10"
+      altBg
+    >
+      {releases.map((release) => (
         <div
           key={release.version}
           className={`changelog-item ${release.current ? "current" : ""}`}
@@ -18,7 +27,7 @@ export default function Changelog() {
             }`}
           >
             {release.version}
-            {release.current ? " · current" : ""}
+            {release.current ? ` · ${t("changelog.currentLabel")}` : ""}
           </span>
           <span className="font-mono text-xs font-semibold text-muted ml-2.5">
             {release.dates}
@@ -37,7 +46,7 @@ export default function Changelog() {
           </ul>
 
           <div className="mt-2.5 font-mono text-[12.5px] text-muted">
-            stack: {release.stack}
+            {t("changelog.stackLabel")}: {release.stack}
           </div>
         </div>
       ))}

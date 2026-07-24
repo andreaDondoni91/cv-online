@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "title": "Andrea Dondoni — Frontend Developer",
+    "description": "Frontend developer with over 10 years of experience. I build interfaces that outlive the framework they were born in."
+  },
+  "hero": {
+    "path": "~/andrea-dondoni · frontend-developer.git",
+    "tagline": "Frontend developer with over 10 years of experience. I build interfaces that outlive the framework they were born in.",
+    "terminalLine": "Frontend developer based in Pavia, Italy.",
+    "ctaChangelog": "View the changelog →",
+    "ctaContact": "Contact me",
+    "ctaCv": "Download CV ↓"
+  },
+  "about": {
+    "eyebrow": "# README.md",
+    "title": "About me",
+    "bio": "I'm a frontend developer based in Pavia, Italy. I started out building interfaces on legacy stacks for banks and insurance companies, and for the past few years I've been maintaining and developing DeAgostini Publishing's public-facing websites, gradually weaving AI-assisted development tools into my workflow. I like code that ages well: readable today, easy to update three years from now."
+  },
+  "changelog": {
+    "eyebrow": "# CHANGELOG.md",
+    "title": "Release history",
+    "currentLabel": "current",
+    "stackLabel": "stack",
+    "releases": [
+      {
+        "version": "v6.0.0",
+        "current": true,
+        "dates": "2022 — present",
+        "role": "DeAgostini Publishing — Frontend Developer",
+        "entries": [
+          { "type": "Added", "text": "ownership of the maintenance and frontend development of the company's two public-facing websites." },
+          { "type": "Added", "text": "AI-assisted development workflow (GitHub Copilot, Claude) to speed up the release cycle." },
+          { "type": "Added", "text": "Docker for the local development environment." },
+          { "type": "Added", "text": "AWS and Heroku cloud services for deployment." },
+          { "type": "Changed", "text": "continuous updates of the project's libraries and frameworks." },
+          { "type": "Improved", "text": "end-to-end user experience, from brief to production deploy." }
+        ],
+        "stack": "javascript · react · gatsby · tailwind · css · html5 · php · git · docker · aws · heroku"
+      },
+      {
+        "version": "v5.0.0",
+        "dates": "2020 — 2022",
+        "role": "Fincons Group @ Banca Mediolanum — IT Consultant",
+        "entries": [
+          { "type": "Added", "text": "new application features, tested end-to-end." },
+          { "type": "Changed", "text": "architecture design, in collaboration with the client and project manager." },
+          { "type": "Docs", "text": "drafting of detailed specification documents." }
+        ],
+        "stack": "javascript · jquery · html5 · css · java (mvc) · jboss · ejb · osb · c++ · pl/sql"
+      },
+      {
+        "version": "v4.0.0",
+        "dates": "2015 — 2020",
+        "role": "Banca Mediolanum — IT Consultant",
+        "entries": [
+          { "type": "Added", "text": "new home banking features." },
+          { "type": "Fixed", "text": "technical issues on existing changes, along with their estimates." }
+        ],
+        "stack": "javascript · html5 · css · java (mvc) · ajax · jquery · c++ · oracle (toad)"
+      },
+      {
+        "version": "v3.0.0",
+        "dates": "2015",
+        "role": "People Lab S.r.l. — Developer",
+        "entries": [
+          { "type": "Added", "text": "new web application for attendance management, built from scratch." }
+        ],
+        "stack": "html5 · css · asp.net · javascript · ajax · jquery · bootstrap · c# · sql server"
+      },
+      {
+        "version": "v2.0.0",
+        "dates": "2013",
+        "role": "People Lab @ Allianz / Target Sistemi @ Aler — IT Consultant",
+        "entries": [
+          { "type": "Added", "text": "new features for an insurance policy management application." },
+          { "type": "Maintained", "text": "active-cycle systems and routine management of the information system." }
+        ],
+        "stack": "visual basic · html · javascript · asp.net · vbscript · oracle (toad) · sql server"
+      },
+      {
+        "version": "v1.0.0",
+        "dates": "2012",
+        "role": "DHL Supply Chain S.p.A. — Internship",
+        "entries": [
+          { "type": "Added", "text": "the visual design of a new internal tool for process improvement." },
+          { "type": "Added", "text": "the first KPI monitoring system tied to operational activities." }
+        ],
+        "stack": "javascript · asp.net · vbscript · mysql"
+      }
+    ]
+  },
+  "skills": {
+    "eyebrow": "# package.json",
+    "title": "What I use",
+    "dependencies": [
+      ["javascript", "^12 years"],
+      ["react", "^4 years"],
+      ["gatsby", "^4 years"],
+      ["tailwindcss", "^3 years"],
+      ["html5-css3", "^12 years"]
+    ],
+    "devDependencies": [
+      ["git", "gitflow, feature-branching"],
+      ["ai-assisted-dev", "copilot, claude"],
+      ["legacy-stacks", "jquery, java-mvc, asp.net"]
+    ]
+  },
+  "projects": {
+    "eyebrow": "# projects/",
+    "title": "Projects",
+    "intro": "This section grows along with the repo — I'll add more real projects here as I publish them.",
+    "featured": {
+      "tags": ["react", "gatsby", "tailwind"],
+      "title": "This portfolio",
+      "description": "The site you're looking at right now — built and deployed from scratch, from design to CI/CD on Netlify.",
+      "linkLabel": "View the repo →"
+    }
+  },
+  "contact": {
+    "eyebrow": "# contact",
+    "title": "Let's talk",
+    "cvCta": "Download CV ↓"
+  }
+}
