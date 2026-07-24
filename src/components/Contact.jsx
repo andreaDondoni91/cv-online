@@ -21,6 +21,14 @@ export default function Contact() {
           },
         ]}
       />
+
+      <a
+        href="/CV-Andrea-Dondoni.pdf"
+        download="CV-Andrea-Dondoni.pdf"
+        className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium bg-ink text-paperwhite hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_#12213A] transition"
+      >
+        Scarica CV ↓
+      </a>
     </Section>
   );
 }
