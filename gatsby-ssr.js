@@ -2,8 +2,11 @@ import React from "react";
 // Self-hosted fonts — replaces the render-blocking Google Fonts request.
 import "./src/styles/fonts";
 
-export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: "it" });
+export { wrapPageElement } from "gatsby-plugin-react-i18next";
+
+export const onRenderBody = ({ pathname, setHeadComponents, setHtmlAttributes }) => {
+  const lang = pathname.startsWith("/en") ? "en" : "it";
+  setHtmlAttributes({ lang });
 
   setHeadComponents([
     <link key="favicon-svg" rel="icon" type="image/svg+xml" href="/favicon.svg" />,

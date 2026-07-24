@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Changelog from "../components/Changelog";
@@ -8,6 +8,10 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
+import itTranslation from "../../locales/it/translation.json";
+import enTranslation from "../../locales/en/translation.json";
+
+const TRANSLATIONS = { it: itTranslation, en: enTranslation };
 
 export default function IndexPage() {
   return (
@@ -24,27 +28,40 @@ export default function IndexPage() {
   );
 }
 
-export const Head = () => {
-  const { site } = useStaticQuery(graphql`
-    query SeoQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-          siteUrl
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }
-  `);
-  const { title, description, author, siteUrl } = site.siteMetadata;
+    site {
+      siteMetadata {
+        author
+        siteUrl
+      }
+    }
+  }
+`;
+
+export const Head = ({ pageContext, data }) => {
+  const { author, siteUrl } = data.site.siteMetadata;
+  const { language, languages, defaultLanguage, originalPath } = pageContext.i18n;
+  const { title, description } = TRANSLATIONS[language].meta;
+
+  const localizedUrl = (lng) =>
+    `${siteUrl}${lng === defaultLanguage ? "" : `/${lng}`}${originalPath}`.replace(/\/$/, "");
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: author,
     jobTitle: "Frontend Developer",
-    url: siteUrl,
+    url: localizedUrl(language),
     email: "mailto:andrea.dondoni91@gmail.com",
     sameAs: ["https://linkedin.com/in/andrea-dondoni-4b717978"],
   };
@@ -53,13 +70,17 @@ export const Head = () => {
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={siteUrl} />
+      <link rel="canonical" href={localizedUrl(language)} />
+      {languages.map((lng) => (
+        <link key={lng} rel="alternate" hrefLang={lng} href={localizedUrl(lng)} />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={localizedUrl(defaultLanguage)} />
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={siteUrl} />
-      <meta property="og:locale" content="it_IT" />
+      <meta property="og:url" content={localizedUrl(language)} />
+      <meta property="og:locale" content={language === "it" ? "it_IT" : "en_US"} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
