@@ -8,7 +8,6 @@ const dependencies = [
   ["gatsby", "^4 anni"],
   ["tailwindcss", "^3 anni"],
   ["html5-css3", "^12 anni"],
-  ["php", "^2 anni"],
 ];
 
 const devDependencies = [
