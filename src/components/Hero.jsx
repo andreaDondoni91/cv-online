@@ -7,7 +7,7 @@ export default function Hero() {
 
   return (
     <header className="grid-bg">
-      <div className="max-w-[880px] mx-auto px-6 pt-28 pb-10">
+      <div className="max-w-[880px] mx-auto px-6 pt-16 md:pt-20 pb-10">
         <p className="font-mono text-[13px] tracking-wide text-teal lowercase">
           {t("hero.path")}
         </p>

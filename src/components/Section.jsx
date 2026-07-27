@@ -1,9 +1,5 @@
 import React from "react";
 
-/**
- * Shared wrapper for content sections: eyebrow label + h2 title, with an
- * optional alternate background used to separate sections visually.
- */
 export default function Section({ id, eyebrow, title, titleClassName = "mb-5", altBg = false, children }) {
   return (
     <section

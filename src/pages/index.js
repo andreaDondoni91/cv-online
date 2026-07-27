@@ -55,10 +55,10 @@ export const Head = ({ pageContext, data }) => {
   const { language, languages, defaultLanguage, originalPath } = pageContext.i18n;
   const { title, description } = TRANSLATIONS[language].meta;
 
-  // Gatsby 5 uses trailing-slash "always", so keep the trailing slash to match
-  // the actually-served URLs and the generated sitemap (e.g. "/" and "/en/").
   const localizedUrl = (lng) =>
     `${siteUrl}${lng === defaultLanguage ? "" : `/${lng}`}${originalPath}`;
+
+  const ogImage = `${siteUrl}/og-image.png`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -66,6 +66,7 @@ export const Head = ({ pageContext, data }) => {
     name: author,
     jobTitle: "Frontend Developer",
     url: localizedUrl(language),
+    image: ogImage,
     email: "mailto:andrea.dondoni91@gmail.com",
     sameAs: ["https://linkedin.com/in/andrea-dondoni-4b717978"],
   };
@@ -85,10 +86,15 @@ export const Head = ({ pageContext, data }) => {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={localizedUrl(language)} />
       <meta property="og:locale" content={language === "it" ? "it_IT" : "en_US"} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title} />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
 
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </>

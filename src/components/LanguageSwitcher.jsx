@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useI18next } from "gatsby-plugin-react-i18next";
 
 const LANGUAGES = [
@@ -8,9 +8,36 @@ const LANGUAGES = [
 
 export default function LanguageSwitcher() {
   const { language, changeLanguage } = useI18next();
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    let lastY = window.scrollY;
+    let ticking = false;
+    const update = () => {
+      const y = window.scrollY;
+      if (y > lastY && y > 80) setHidden(true);
+      else if (y < lastY) setHidden(false);
+      lastY = y;
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex items-center gap-1 rounded-full border border-paper2 bg-paperwhite/90 backdrop-blur px-1 py-1 shadow-[0_8px_24px_-12px_rgba(18,33,58,0.4)]">
+    <nav
+      aria-label="Lingua / Language"
+      className={`fixed top-4 right-4 z-50 flex items-center gap-1 rounded-full border border-paper2 bg-paperwhite/90 backdrop-blur px-1 py-1 shadow-[0_8px_24px_-12px_rgba(18,33,58,0.4)] transition-transform duration-300 md:translate-y-0 ${
+        hidden ? "-translate-y-[calc(100%+1.5rem)]" : "translate-y-0"
+      }`}
+    >
       {LANGUAGES.map(({ code, label, flag, name }) => {
         const active = language === code;
         return (
@@ -31,6 +58,6 @@ export default function LanguageSwitcher() {
           </button>
         );
       })}
-    </div>
+    </nav>
   );
 }

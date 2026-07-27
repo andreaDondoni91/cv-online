@@ -13,7 +13,6 @@ module.exports = [
   react.configs.flat.recommended,
   jsxA11y.flatConfigs.recommended,
 
-  // Application source: browser, ES modules, JSX.
   {
     files: ["**/*.{js,jsx}"],
     plugins: { "react-hooks": reactHooks },
@@ -27,16 +26,12 @@ module.exports = [
     rules: {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      // No PropTypes / TypeScript in this project by design.
       "react/prop-types": "off",
-      // Allow destructuring to omit props into a `...rest` collector.
       "no-unused-vars": ["error", { ignoreRestSiblings: true }],
-      // Literal quotes are intentional (package.json-style code display).
       "react/no-unescaped-entities": "off",
     },
   },
 
-  // CommonJS config files run by Node.
   {
     files: [
       "eslint.config.js",
@@ -52,7 +47,6 @@ module.exports = [
     },
   },
 
-  // Gatsby SSR/browser APIs: ES modules in a Node context.
   {
     files: ["gatsby-browser.js", "gatsby-ssr.js"],
     languageOptions: {
@@ -61,7 +55,6 @@ module.exports = [
     },
   },
 
-  // Jest tests and setup files.
   {
     files: ["**/*.test.{js,jsx}", "jest.setup.js", "loadershim.js"],
     languageOptions: {
@@ -69,7 +62,6 @@ module.exports = [
     },
   },
 
-  // Jest manual mocks: CommonJS + jest globals.
   {
     files: ["__mocks__/**"],
     languageOptions: {

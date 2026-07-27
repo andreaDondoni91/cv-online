@@ -12,7 +12,6 @@ body {
 }
 
 @layer components {
-  /* Blueprint grid background used behind the hero */
   .grid-bg {
     position: relative;
   }
@@ -31,7 +30,6 @@ body {
     position: relative;
   }
 
-  /* Changelog timeline connector dot */
   .changelog-item {
     position: relative;
     border-left: 2px solid theme("colors.grid");
