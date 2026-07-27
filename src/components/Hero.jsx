@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Terminal from "./Terminal";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -9,12 +8,9 @@ export default function Hero() {
   return (
     <header className="grid-bg">
       <div className="max-w-[880px] mx-auto px-6 pt-28 pb-10">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <p className="font-mono text-[13px] tracking-wide text-teal lowercase">
-            {t("hero.path")}
-          </p>
-          <LanguageSwitcher />
-        </div>
+        <p className="font-mono text-[13px] tracking-wide text-teal lowercase">
+          {t("hero.path")}
+        </p>
 
         <h1 className="font-display font-bold text-4xl md:text-[56px] leading-[1.05] tracking-tight text-ink mt-3.5 mb-4">
           Andrea Dondoni
