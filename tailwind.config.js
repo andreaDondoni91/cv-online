@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -10,8 +9,8 @@ module.exports = {
         inksoft: "#2A3B57",
         muted: "#51617A",
         grid: "#C3CEDA",
-        teal: "#0E7C86",
-        tealdim: "#0E7C8622",
+        teal: "#0D727A",
+        tealdim: "#0D727A22",
         amber: "#E0982A",
         paperwhite: "#FBFCFE",
         terminalText: "#CFE8E6",

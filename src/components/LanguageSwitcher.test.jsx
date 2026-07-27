@@ -11,7 +11,6 @@ describe("LanguageSwitcher", () => {
 
   it("marks the current language as active", () => {
     render(<LanguageSwitcher />);
-    // The mock reports Italian as the active language.
     expect(screen.getByRole("button", { name: "Italiano" })).toHaveAttribute("aria-current", "true");
     expect(screen.getByRole("button", { name: "English" })).not.toHaveAttribute("aria-current");
   });

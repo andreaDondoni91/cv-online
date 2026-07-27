@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-/**
- * Small terminal-style window. Pass `lines` for static content,
- * or `typedLine` for a line that types itself out on mount.
- */
 export default function Terminal({ typedLine, lines = [], className = "" }) {
   const [typed, setTyped] = useState("");
 

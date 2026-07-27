@@ -1,5 +1,4 @@
 import React from "react";
-// Self-hosted fonts — replaces the render-blocking Google Fonts request.
 import "./src/styles/fonts";
 
 export { wrapPageElement } from "gatsby-plugin-react-i18next";

@@ -23,6 +23,7 @@ module.exports = {
         languages: ["it", "en"],
         defaultLanguage: "it",
         siteUrl: "https://andrea-dondoni.netlify.app",
+        redirect: false,
         trailingSlash: "never",
         i18nextOptions: {
           interpolation: { escapeValue: false },
