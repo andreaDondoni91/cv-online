@@ -8,6 +8,7 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 import itTranslation from "../../locales/it/translation.json";
 import enTranslation from "../../locales/en/translation.json";
 
@@ -17,6 +18,7 @@ export default function IndexPage() {
   return (
     <main className="font-sans">
       <ScrollReveal />
+      <LanguageSwitcher />
       <Hero />
       <About />
       <Changelog />
@@ -53,8 +55,10 @@ export const Head = ({ pageContext, data }) => {
   const { language, languages, defaultLanguage, originalPath } = pageContext.i18n;
   const { title, description } = TRANSLATIONS[language].meta;
 
+  // Gatsby 5 uses trailing-slash "always", so keep the trailing slash to match
+  // the actually-served URLs and the generated sitemap (e.g. "/" and "/en/").
   const localizedUrl = (lng) =>
-    `${siteUrl}${lng === defaultLanguage ? "" : `/${lng}`}${originalPath}`.replace(/\/$/, "");
+    `${siteUrl}${lng === defaultLanguage ? "" : `/${lng}`}${originalPath}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
