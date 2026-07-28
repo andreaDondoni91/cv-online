@@ -3,6 +3,10 @@
     "title": "Andrea Dondoni — Frontend Developer",
     "description": "Frontend developer con oltre 10 anni di esperienza. Costruisco interfacce che restano in produzione ben oltre il framework con cui sono nate."
   },
+  "cv": {
+    "file": "/CV-Andrea-Dondoni-it.pdf",
+    "download": "CV-Andrea-Dondoni-IT.pdf"
+  },
   "hero": {
     "path": "~/andrea-dondoni · frontend-developer.git",
     "tagline": "Frontend developer con oltre 10 anni di esperienza. Costruisco interfacce che restano in produzione ben oltre il framework con cui sono nate.",

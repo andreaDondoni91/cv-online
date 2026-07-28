@@ -22,7 +22,7 @@ describe("Contact", () => {
   it("offers a CV download", () => {
     render(<Contact />);
     const cvLink = screen.getByRole("link", { name: /scarica cv/i });
-    expect(cvLink).toHaveAttribute("href", "/CV-Andrea-Dondoni.pdf");
-    expect(cvLink).toHaveAttribute("download");
+    expect(cvLink).toHaveAttribute("href", "/CV-Andrea-Dondoni-it.pdf");
+    expect(cvLink).toHaveAttribute("download", "CV-Andrea-Dondoni-IT.pdf");
   });
 });

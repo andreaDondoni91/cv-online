@@ -3,6 +3,10 @@
     "title": "Andrea Dondoni — Frontend Developer",
     "description": "Frontend developer with over 10 years of experience. I build interfaces that outlive the framework they were born in."
   },
+  "cv": {
+    "file": "/CV-Andrea-Dondoni-en.pdf",
+    "download": "CV-Andrea-Dondoni-EN.pdf"
+  },
   "hero": {
     "path": "~/andrea-dondoni · frontend-developer.git",
     "tagline": "Frontend developer with over 10 years of experience. I build interfaces that outlive the framework they were born in.",
