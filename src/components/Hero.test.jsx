@@ -21,7 +21,7 @@ describe("Hero", () => {
   it("offers a CV download that points at the PDF and forces a download", () => {
     render(<Hero />);
     const cvLink = screen.getByRole("link", { name: /scarica cv/i });
-    expect(cvLink).toHaveAttribute("href", "/CV-Andrea-Dondoni.pdf");
-    expect(cvLink).toHaveAttribute("download", "CV-Andrea-Dondoni.pdf");
+    expect(cvLink).toHaveAttribute("href", "/CV-Andrea-Dondoni-it.pdf");
+    expect(cvLink).toHaveAttribute("download", "CV-Andrea-Dondoni-IT.pdf");
   });
 });
