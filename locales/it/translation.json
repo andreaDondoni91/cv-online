@@ -128,6 +128,51 @@
   "consent": {
     "message": "Questo sito usa Google Analytics per misurare le visite in forma anonima. Nessun cookie viene installato senza il tuo consenso.",
     "accept": "Accetta",
-    "reject": "Rifiuta"
+    "reject": "Rifiuta",
+    "policyLink": "Leggi la privacy policy"
+  },
+  "footer": {
+    "privacy": "Privacy & Cookie",
+    "manageCookies": "Gestisci cookie"
+  },
+  "privacy": {
+    "title": "Privacy & Cookie Policy",
+    "updated": "Ultimo aggiornamento: luglio 2026",
+    "back": "← Torna alla home",
+    "intro": "Questa pagina descrive come vengono trattati i dati personali degli utenti che visitano questo sito, un portfolio personale.",
+    "sections": [
+      {
+        "heading": "Titolare del trattamento",
+        "body": "Il titolare del trattamento è Andrea Dondoni, contattabile all'indirizzo andreadondoni.privacy@gmail.com."
+      },
+      {
+        "heading": "Dati raccolti",
+        "body": "Il sito raccoglie dati di navigazione in forma aggregata e anonima tramite Google Analytics 4 (pagine visitate, durata della visita, tipo di dispositivo, provenienza del traffico). Questi dati vengono raccolti esclusivamente dopo il consenso dell'utente. Il download del CV è un file statico e non comporta la raccolta di dati aggiuntivi."
+      },
+      {
+        "heading": "Finalità e base giuridica",
+        "body": "I dati sono utilizzati unicamente per finalità statistiche, per comprendere in forma aggregata come viene utilizzato il sito. La base giuridica del trattamento è il consenso dell'utente (art. 6, par. 1, lett. a del Regolamento UE 2016/679)."
+      },
+      {
+        "heading": "Cookie e tecnologie simili",
+        "body": "Google Analytics 4 viene caricato tramite Google Tag Manager solo dopo il consenso e può installare cookie di misurazione. Prima del consenso non viene installato alcun cookie di analisi. Per memorizzare la scelta di consenso viene utilizzato il localStorage del browser, una tecnologia tecnica necessaria a ricordare la preferenza e non soggetta a consenso."
+      },
+      {
+        "heading": "Terze parti e trasferimento dei dati",
+        "body": "I dati statistici sono trattati da Google (Google Analytics 4 e Google Tag Manager). Google può trasferire dati verso gli Stati Uniti; tale trasferimento è disciplinato dal EU-US Data Privacy Framework, di cui Google LLC è certificata."
+      },
+      {
+        "heading": "Conservazione dei dati",
+        "body": "I dati di Google Analytics sono conservati secondo le impostazioni di conservazione della piattaforma. La preferenza di consenso rimane memorizzata nel tuo browser fino a quando non la modifichi o cancelli i dati del sito."
+      },
+      {
+        "heading": "I tuoi diritti",
+        "body": "Puoi in qualsiasi momento esercitare i diritti di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità previsti dagli artt. 15-22 del GDPR, scrivendo a andreadondoni.privacy@gmail.com. Hai inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali (garanteprivacy.it)."
+      },
+      {
+        "heading": "Revoca del consenso",
+        "body": "Puoi modificare o revocare il consenso in qualsiasi momento tramite il link \"Gestisci cookie\" presente nel footer del sito. La revoca ha effetto per le visite successive."
+      }
+    ]
   }
 }

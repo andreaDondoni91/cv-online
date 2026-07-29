@@ -128,6 +128,51 @@
   "consent": {
     "message": "This site uses Google Analytics to measure visits anonymously. No cookies are set without your consent.",
     "accept": "Accept",
-    "reject": "Decline"
+    "reject": "Decline",
+    "policyLink": "Read the privacy policy"
+  },
+  "footer": {
+    "privacy": "Privacy & Cookie",
+    "manageCookies": "Manage cookies"
+  },
+  "privacy": {
+    "title": "Privacy & Cookie Policy",
+    "updated": "Last updated: July 2026",
+    "back": "← Back to home",
+    "intro": "This page describes how the personal data of visitors to this site — a personal portfolio — is processed.",
+    "sections": [
+      {
+        "heading": "Data controller",
+        "body": "The data controller is Andrea Dondoni, reachable at andreadondoni.privacy@gmail.com."
+      },
+      {
+        "heading": "Data collected",
+        "body": "The site collects browsing data in aggregate, anonymous form through Google Analytics 4 (pages visited, visit duration, device type, traffic source). This data is collected only after the user's consent. The CV download is a static file and involves no additional data collection."
+      },
+      {
+        "heading": "Purpose and legal basis",
+        "body": "The data is used solely for statistical purposes, to understand in aggregate form how the site is used. The legal basis for processing is the user's consent (Article 6(1)(a) of EU Regulation 2016/679)."
+      },
+      {
+        "heading": "Cookies and similar technologies",
+        "body": "Google Analytics 4 is loaded through Google Tag Manager only after consent and may set measurement cookies. No analytics cookie is set before consent. Your consent choice is stored using the browser's localStorage, a technical technology needed to remember the preference and not subject to consent."
+      },
+      {
+        "heading": "Third parties and data transfer",
+        "body": "Statistical data is processed by Google (Google Analytics 4 and Google Tag Manager). Google may transfer data to the United States; such transfer is governed by the EU-US Data Privacy Framework, under which Google LLC is certified."
+      },
+      {
+        "heading": "Data retention",
+        "body": "Google Analytics data is retained according to the platform's retention settings. Your consent preference remains stored in your browser until you change it or clear the site's data."
+      },
+      {
+        "heading": "Your rights",
+        "body": "You may at any time exercise the rights of access, rectification, erasure, restriction, objection and portability under Articles 15-22 of the GDPR by writing to andreadondoni.privacy@gmail.com. You also have the right to lodge a complaint with the Italian Data Protection Authority (garanteprivacy.it)."
+      },
+      {
+        "heading": "Withdrawing consent",
+        "body": "You can change or withdraw your consent at any time through the \"Manage cookies\" link in the site footer. Withdrawal takes effect for subsequent visits."
+      }
+    ]
   }
 }
