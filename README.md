@@ -33,27 +33,3 @@ npm run develop
 ```
 
 Il sito sarà disponibile su `http://localhost:8000`.
-
-## Build di produzione
-
-```bash
-npm run build
-npm run serve   # per testare la build in locale su http://localhost:9000
-```
-
-## Deploy (gratuito)
-
-Le opzioni più semplici:
-
-- **Netlify**: collega il repo GitHub su [netlify.com](https://app.netlify.com),
-  build command `npm run build`, publish directory `public`.
-- **Vercel**: stesso procedimento su [vercel.com](https://vercel.com), Vercel
-  riconosce Gatsby automaticamente.
-- **GitHub Pages**: usa `gatsby-plugin-gh-pages` (da aggiungere) oppure pubblica
-  la cartella `public/` generata dalla build.
-
-## Prossimi passi
-
-- [ ] Sostituire i 2 progetti placeholder in `src/data/projects.js` con progetti reali
-- [ ] Aggiungere uno screenshot/demo per ogni progetto
-- [ ] Eventualmente collegare un dominio personalizzato (es. `andreadondoni.dev`)
