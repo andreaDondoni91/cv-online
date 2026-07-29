@@ -124,5 +124,10 @@
     "eyebrow": "# contatti",
     "title": "Parliamone",
     "cvCta": "Scarica CV ↓"
+  },
+  "consent": {
+    "message": "Questo sito usa Google Analytics per misurare le visite in forma anonima. Nessun cookie viene installato senza il tuo consenso.",
+    "accept": "Accetta",
+    "reject": "Rifiuta"
   }
 }

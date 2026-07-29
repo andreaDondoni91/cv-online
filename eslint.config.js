@@ -20,7 +20,7 @@ module.exports = [
       ecmaVersion: 2022,
       sourceType: "module",
       parserOptions: { ecmaFeatures: { jsx: true } },
-      globals: { ...globals.browser },
+      globals: { ...globals.browser, process: "readonly" },
     },
     settings: { react: { version: "detect" } },
     rules: {

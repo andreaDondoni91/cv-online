@@ -9,6 +9,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import CookieConsent from "../components/CookieConsent";
 import itTranslation from "../../locales/it/translation.json";
 import enTranslation from "../../locales/en/translation.json";
 
@@ -26,6 +27,7 @@ export default function IndexPage() {
       <Projects />
       <Contact />
       <Footer />
+      <CookieConsent />
     </main>
   );
 }

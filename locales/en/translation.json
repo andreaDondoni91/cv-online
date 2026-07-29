@@ -124,5 +124,10 @@
     "eyebrow": "# contact",
     "title": "Let's talk",
     "cvCta": "Download CV ↓"
+  },
+  "consent": {
+    "message": "This site uses Google Analytics to measure visits anonymously. No cookies are set without your consent.",
+    "accept": "Accept",
+    "reject": "Decline"
   }
 }
