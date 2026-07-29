@@ -15,7 +15,7 @@ const data = {
   site: {
     siteMetadata: {
       author: "Andrea Dondoni",
-      siteUrl: "https://andrea-dondoni.netlify.app",
+      siteUrl: "https://andreadondoni.com",
     },
   },
 };
@@ -26,7 +26,7 @@ describe("IndexPage Head", () => {
 
     expect(container.querySelector('link[rel="canonical"]')).toHaveAttribute(
       "href",
-      "https://andrea-dondoni.netlify.app/"
+      "https://andreadondoni.com/"
     );
     expect(container.querySelector('meta[property="og:title"]')).toHaveAttribute(
       "content",
@@ -43,15 +43,15 @@ describe("IndexPage Head", () => {
 
     expect(container.querySelector('link[hreflang="it"]')).toHaveAttribute(
       "href",
-      "https://andrea-dondoni.netlify.app/"
+      "https://andreadondoni.com/"
     );
     expect(container.querySelector('link[hreflang="en"]')).toHaveAttribute(
       "href",
-      "https://andrea-dondoni.netlify.app/en/"
+      "https://andreadondoni.com/en/"
     );
     expect(container.querySelector('link[hreflang="x-default"]')).toHaveAttribute(
       "href",
-      "https://andrea-dondoni.netlify.app/"
+      "https://andreadondoni.com/"
     );
   });
 
