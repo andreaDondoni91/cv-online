@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, Link } from "gatsby-plugin-react-i18next";
 
 const STORAGE_KEY = "cookie-consent";
 
@@ -34,6 +34,12 @@ export default function CookieConsent() {
     }
   }, [gtmId]);
 
+  useEffect(() => {
+    const reopen = () => setChoice("pending");
+    window.addEventListener("cookie:manage", reopen);
+    return () => window.removeEventListener("cookie:manage", reopen);
+  }, []);
+
   if (!gtmId || choice !== "pending") return null;
 
   const accept = () => {
@@ -63,7 +69,13 @@ export default function CookieConsent() {
         <span className="text-amber">$</span>{" "}
         <span className="text-terminalText">cookies --consent</span>
       </div>
-      <p className="text-terminalOutput text-[13px] leading-relaxed mb-4">{t("consent.message")}</p>
+      <p className="text-terminalOutput text-[13px] leading-relaxed mb-2">{t("consent.message")}</p>
+      <Link
+        to="/privacy"
+        className="inline-block text-[12px] text-terminalOutput underline hover:text-terminalText mb-4"
+      >
+        {t("consent.policyLink")}
+      </Link>
 
       <div className="flex gap-2">
         <button
