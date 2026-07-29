@@ -8,6 +8,7 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
+import ScrollDepthTracker from "../components/ScrollDepthTracker";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 import CookieConsent from "../components/CookieConsent";
 import itTranslation from "../../locales/it/translation.json";
@@ -19,6 +20,7 @@ export default function IndexPage() {
   return (
     <main className="font-sans">
       <ScrollReveal />
+      <ScrollDepthTracker />
       <LanguageSwitcher />
       <Hero />
       <About />

@@ -47,7 +47,7 @@ export default function Terminal({ typedLine, lines = [], className = "" }) {
           {line.output && (
             <div className="text-terminalOutput">
               {line.href ? (
-                <a href={line.href} className="underline hover:text-terminalText">
+                <a href={line.href} onClick={line.onClick} className="underline hover:text-terminalText">
                   {line.output}
                 </a>
               ) : (

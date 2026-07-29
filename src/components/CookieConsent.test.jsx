@@ -5,7 +5,7 @@ import CookieConsent from "./CookieConsent";
 describe("CookieConsent", () => {
   afterEach(() => {
     window.localStorage.clear();
-    delete window.__gaLoaded;
+    delete window.__gtmLoaded;
     delete process.env.GATSBY_GTM_ID;
   });
 
@@ -32,6 +32,6 @@ describe("CookieConsent", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /rifiuta/i }));
     expect(window.localStorage.getItem("cookie-consent")).toBe("denied");
-    expect(window.__gaLoaded).toBeUndefined();
+    expect(window.__gtmLoaded).toBeUndefined();
   });
 });
