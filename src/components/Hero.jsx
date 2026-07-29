@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Terminal from "./Terminal";
+import { track } from "../lib/track";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -25,12 +26,14 @@ export default function Hero() {
         <div className="flex gap-3.5 flex-wrap">
           <a
             href="#changelog"
+            onClick={() => track("cta_click", { cta: "changelog", location: "hero" })}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium bg-ink text-paperwhite hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_#12213A] transition"
           >
             {t("hero.ctaChangelog")}
           </a>
           <a
             href="#contact"
+            onClick={() => track("cta_click", { cta: "contact", location: "hero" })}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium border border-ink text-ink hover:bg-ink hover:text-paperwhite hover:-translate-y-0.5 transition"
           >
             {t("hero.ctaContact")}
@@ -38,6 +41,7 @@ export default function Hero() {
           <a
             href={t("cv.file")}
             download={t("cv.download")}
+            onClick={() => track("cv_download", { location: "hero" })}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium border border-ink text-ink hover:bg-ink hover:text-paperwhite hover:-translate-y-0.5 transition"
           >
             {t("hero.ctaCv")}

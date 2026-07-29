@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useI18next } from "gatsby-plugin-react-i18next";
+import { track } from "../lib/track";
 
 const LANGUAGES = [
   { code: "it", label: "IT", flag: "🇮🇹", name: "Italiano" },
@@ -44,7 +45,10 @@ export default function LanguageSwitcher() {
           <button
             key={code}
             type="button"
-            onClick={() => changeLanguage(code)}
+            onClick={() => {
+              track("language_change", { language: code });
+              changeLanguage(code);
+            }}
             aria-current={active ? "true" : undefined}
             aria-label={name}
             className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-mono text-[13px] font-medium transition ${

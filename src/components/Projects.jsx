@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Section from "./Section";
 import Terminal from "./Terminal";
+import { track } from "../lib/track";
 
 const REPO_URL = "https://github.com/andreaDondoni91/cv-online";
 
@@ -29,6 +30,7 @@ export default function Projects() {
             href={REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("project_click", { project: "portfolio", target: "repo" })}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-md font-mono text-sm font-medium bg-ink text-paperwhite hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_#12213A] transition"
           >
             {project.linkLabel}
