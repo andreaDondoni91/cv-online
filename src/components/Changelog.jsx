@@ -37,10 +37,10 @@ export default function Changelog() {
             {release.role}
           </h3>
 
-          <ul className="mt-2.5 mb-1 pl-4.5 list-disc">
+          <ul className="mt-2.5 mb-1 pl-[18px] list-disc">
             {release.entries.map((entry, i) => (
               <li key={i} className="mb-1.5 text-inksoft">
-                <strong>{entry.type}:</strong> {entry.text}
+                <strong className="font-semibold text-ink">{entry.type}:</strong> {entry.text}
               </li>
             ))}
           </ul>

@@ -107,6 +107,7 @@
     ],
     "devDependencies": [
       ["git", "gitflow, feature-branching"],
+      ["testing", "jest, playwright"],
       ["ai-assisted-dev", "copilot, claude"],
       ["legacy-stacks", "jquery, java-mvc, asp.net"]
     ]
@@ -139,7 +140,7 @@
   },
   "privacy": {
     "title": "Privacy & Cookie Policy",
-    "updated": "Last updated: July 2026",
+    "updated": "Last updated: November 2026",
     "back": "← Back to home",
     "intro": "This page describes how the personal data of visitors to this site — a personal portfolio — is processed.",
     "sections": [
@@ -173,7 +174,7 @@
       },
       {
         "heading": "Withdrawing consent",
-        "body": "You can change or withdraw your consent at any time through the \"Manage cookies\" link in the site footer. Withdrawal takes effect for subsequent visits."
+        "body": "You can change or withdraw your consent at any time through the \"Manage cookies\" link in the site footer. Withdrawal takes effect immediately: Google Analytics cookies are deleted and the page reloads without any measurement tools."
       }
     ]
   }

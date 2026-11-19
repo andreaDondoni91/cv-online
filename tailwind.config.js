@@ -17,7 +17,7 @@ module.exports = {
         terminalOutput: "#9FB4C7",
         codeText: "#D8E4EE",
         codeKey: "#8FD6CE",
-        codePunct: "#6E8299",
+        codePunct: "#788CA3",
         codeValue: "#F2C57C",
       },
       fontFamily: {

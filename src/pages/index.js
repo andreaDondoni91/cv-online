@@ -72,7 +72,10 @@ export const Head = ({ pageContext, data }) => {
     url: localizedUrl(language),
     image: ogImage,
     email: "mailto:andrea.dondoni91@gmail.com",
-    sameAs: ["https://linkedin.com/in/andrea-dondoni-4b717978"],
+    sameAs: [
+      "https://linkedin.com/in/andrea-dondoni-4b717978",
+      "https://github.com/andreaDondoni91",
+    ],
   };
 
   return (

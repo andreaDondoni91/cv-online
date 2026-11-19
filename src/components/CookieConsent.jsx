@@ -3,6 +3,38 @@ import { useTranslation, Link } from "gatsby-plugin-react-i18next";
 
 const STORAGE_KEY = "cookie-consent";
 
+// localStorage can throw (Safari private mode, blocked site data): never let it break the page.
+function readChoice() {
+  try {
+    return window.localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function saveChoice(value) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, value);
+  } catch {
+    // Choice simply won't persist across visits.
+  }
+}
+
+// Remove Google Analytics cookies (_ga, _ga_<id>, _gid) so revoking consent takes effect immediately.
+function clearAnalyticsCookies() {
+  const host = window.location.hostname;
+  const domains = ["", host, `.${host}`, `.${host.replace(/^www\./, "")}`];
+  document.cookie
+    .split(";")
+    .map((c) => c.split("=")[0].trim())
+    .filter((name) => name === "_gid" || name === "_ga" || name.startsWith("_ga_"))
+    .forEach((name) => {
+      domains.forEach((domain) => {
+        document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
+      });
+    });
+}
+
 function loadGTM(id) {
   if (window.__gtmLoaded) return;
   window.__gtmLoaded = true;
@@ -23,7 +55,7 @@ export default function CookieConsent() {
 
   useEffect(() => {
     if (!gtmId) return;
-    const stored = window.localStorage.getItem(STORAGE_KEY);
+    const stored = readChoice();
     if (stored === "granted") {
       loadGTM(gtmId);
       setChoice("granted");
@@ -43,14 +75,18 @@ export default function CookieConsent() {
   if (!gtmId || choice !== "pending") return null;
 
   const accept = () => {
-    window.localStorage.setItem(STORAGE_KEY, "granted");
+    saveChoice("granted");
     loadGTM(gtmId);
     setChoice("granted");
   };
 
   const reject = () => {
-    window.localStorage.setItem(STORAGE_KEY, "denied");
+    const wasLoaded = window.__gtmLoaded;
+    saveChoice("denied");
+    clearAnalyticsCookies();
     setChoice("denied");
+    // GTM can't be unloaded from a running page: reload so no further hits are sent.
+    if (wasLoaded) window.location.reload();
   };
 
   return (
