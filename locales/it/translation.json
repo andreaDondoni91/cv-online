@@ -4,7 +4,7 @@
     "description": "Frontend developer con oltre 10 anni di esperienza. Costruisco interfacce che restano in produzione ben oltre il framework con cui sono nate."
   },
   "cv": {
-    "file": "/CV-Andrea-Dondoni-it.pdf",
+    "file": "/CV_Andrea_Dondoni-it.pdf",
     "download": "CV-Andrea-Dondoni-IT.pdf"
   },
   "hero": {
@@ -35,11 +35,13 @@
           { "type": "Added", "text": "ownership della manutenzione e dello sviluppo frontend dei due siti pubblici aziendali." },
           { "type": "Added", "text": "workflow di sviluppo assistito da AI (GitHub Copilot, Claude) per velocizzare il ciclo di rilascio." },
           { "type": "Added", "text": "Docker per l'ambiente di sviluppo locale." },
+          { "type": "Added", "text": "Jest per i test unitari del codice frontend." },
+          { "type": "Added", "text": "creazione della suite di test automatici con Playwright sui siti live." },
           { "type": "Added", "text": "servizi cloud AWS e Heroku per il deploy." },
           { "type": "Changed", "text": "aggiornamento continuo di librerie e framework del progetto." },
           { "type": "Improved", "text": "esperienza utente end-to-end, dal brief al deploy in produzione." }
         ],
-        "stack": "javascript · react · gatsby · tailwind · css · html5 · php · git · docker · aws · heroku"
+        "stack": "javascript · react · next · gatsby · tailwind · css · html5 · php · git · docker · jest · playwright · aws · heroku"
       },
       {
         "version": "v5.0.0",
